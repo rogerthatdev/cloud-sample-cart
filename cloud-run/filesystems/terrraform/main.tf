@@ -28,7 +28,7 @@ resource "google_filestore_instance" "default" {
   tier     = "PREMIUM"
 
   file_shares {
-    capacity_gb = 2660
+    capacity_gb = 2560 # minimum capacity
     name        = "share1"
   }
 
