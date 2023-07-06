@@ -1,8 +1,11 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
 # Create a directory to mount the NFS to.
-mkdir -p mountpoint
+mkdir -p $MNT_DIR
 
 # Mount the NFS filesystem to the mount point
-mount -o nolock $FILESTORE_IP:/$FILESTORE_SHARE_NAME mountpoint
+mount -o nolock $FILESTORE_IP:/$FILESTORE_SHARE_NAME $MNT_DIR
 
-# Start the application
-
+# Start the sample code.
+node sample.js
